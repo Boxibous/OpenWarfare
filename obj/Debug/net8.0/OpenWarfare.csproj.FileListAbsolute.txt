@@ -1,0 +1,14 @@
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\bin\Debug\net8.0\OpenWarfare.exe
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\bin\Debug\net8.0\OpenWarfare.deps.json
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\bin\Debug\net8.0\OpenWarfare.runtimeconfig.json
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\bin\Debug\net8.0\OpenWarfare.dll
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\bin\Debug\net8.0\OpenWarfare.pdb
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.AssemblyInfoInputs.cache
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.AssemblyInfo.cs
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.csproj.CoreCompileInputs.cache
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.dll
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\refint\OpenWarfare.dll
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.pdb
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.genruntimeconfig.cache
+C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\ref\OpenWarfare.dll
