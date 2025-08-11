@@ -12,3 +12,4 @@ C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\refint\OpenWa
 C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.pdb
 C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.genruntimeconfig.cache
 C:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\ref\OpenWarfare.dll
+c:\Users\ThunderStrike\Documents\g4m3\OpenWarfare\obj\Debug\net8.0\OpenWarfare.sourcelink.json

@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace OpenWarfare.Manager
 {
     public class TileData
@@ -8,9 +10,9 @@ namespace OpenWarfare.Manager
         public bool IsBuildable { get; private set; }
         public Infrastructural.Infrastructure? occupancy;
         public bool entities_can_exist => occupancy?.Collidable ?? true;
-        public Entity.IEntity? Entity;
+        public Entity.Entity? Entity;
         public byte ownedBy = 0; // 0 is international. 
-        public Entity.AreaEffects[]? areaEffects; // Nullable; list of area effects on the tile.
+        // public Entity.AreaEffects[]? areaEffects; // Nullable; list of area effects on the tile.
         public TileData(short x, short y) // init TileData from position
         {
             this.x = x;
@@ -19,10 +21,10 @@ namespace OpenWarfare.Manager
             IsBuildable = true;
             occupancy = null;
         }
-        public TileData(Vector<short> position) // init TileData from Vector data
+        public TileData(Vector2 position) // init TileData from Vector data
         {
-            x = position.x;
-            y = position.y;
+            x = (short)position.X;
+            y = (short)position.Y;
             IsOccupied = false;
             IsBuildable = true;
             occupancy = null;
@@ -42,7 +44,18 @@ namespace OpenWarfare.Manager
         }
         public void RemoveBuilding() // Remove existing buildings on this tile
         {
-            
+
+        }
+        public TileData Copy(TileData t)
+        {
+            this.x = t.x;
+            this.y = t.y;
+            IsOccupied = t.IsOccupied;
+            IsBuildable = t.IsBuildable;
+            occupancy = t.occupancy;
+            Entity = t.Entity;
+            ownedBy = t.ownedBy;
+            return this;
         }
     }
 }

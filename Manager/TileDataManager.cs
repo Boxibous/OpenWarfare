@@ -1,55 +1,45 @@
+using System.Numerics;
 using OpenWarfare;
 using OpenWarfare.Manager;
 namespace OpenWarfare.Manager
 {
     public class TileDataManager
     {
-        public World world;
-        public TileData[,] tiles;
+        public World world { get; private set; }
+        public Dictionary<Vector2, TileData> tiles;
         public TileData? GetTileAt(int x, int y)
         {
-            if (tiles[x, y] == null)
+            Vector2 v = new Vector2(x, y);
+            if (tiles.TryGetValue(v, out TileData? td))
             {
-                return null;
+                return td;
             }
-            return tiles[x, y];
+            throw new Exception();
         }
-        public TileDataManager SetTileAt(int x, int y, TileData tile) // unsafe forceful replacement of TileData, which overrides building in other words.
+        public TileDataManager SetTileAt(int x, int y, TileData tile, bool? force) // unsafe forceful replacement of TileData, which overrides building in other words.
         {
-            if (tile.x != x || tile.y != y)
+            Vector2 v = new Vector2(x, y);
+            if (tiles.TryGetValue(v, out TileData? td))
             {
-                throw new ArgumentException();
+                if (td is not null &&
+                    td.occupancy?.Collidable is not true &&
+                    td.Entity?.Collidable is not true &&
+                    force is not true)
+                {
+                    throw new Exception("ahh");
+                }
+                tiles.GetValueOrDefault(v)?.Copy(tile);
             }
-            tiles[x, y] = tile;
-            return this;
-        }
-        public TileDataManager Build(int x, int y, Infrastructural.Infrastructure infrastructure) // SetTileAt replacement, much safer
-        {
-            if (tiles[x, y] != null)
-            {
-                throw new Exception("Build(...) called when building ALREADY exist. Call SetTileAt(...) instead!");
-            }
-            if (tiles[x, y] == null)
-            {
-                tiles[x, y] = new TileData((short)x, (short)y);
-            }
-            tiles[x, y].Building(infrastructure);
             return this;
         }
         public TileDataManager(World world)
         {
             this.world = world;
-            tiles = new TileData[world.width, world.height];
+            tiles = new Dictionary<Vector2, TileData>();
         }
         public void tick()
         {
-            foreach (TileData tile in tiles)
-            {
-                if (tile != null && tile.IsOccupied && tile.occupancy != null)
-                {
-                    tile.occupancy.tick();
-                }
-            }
+            
         }
     }
 }
