@@ -1,13 +1,14 @@
 using System.Numerics;
+using System.Text.Json;
 using OpenWarfare.Event;
 
 namespace OpenWarfare.Entity
 {
     public class Entity
     {
-        public delegate void EntityDelegate(Entity entity);
-        public delegate void EntityDelegate2(Entity entity, Vector2 pos);
-        public delegate void EntityDamageDelegate(Entity entity, float damage);
+        public delegate void EntityDelegate(object sender, Entity entity);
+        public delegate void EntityDelegate2(object sender, Entity entity, Vector2 pos);
+        public delegate void EntityDamageDelegate(object sender, Entity entity, float damage);
 
         public event EntityDelegate EntityDeathEvent = delegate { };
         public event EntityDamageDelegate EntityDamageEvent = delegate { };
@@ -30,7 +31,7 @@ namespace OpenWarfare.Entity
             Health -= dmg;
             if (dmg > 0)
             {
-                EntityDamageEvent.Invoke(this, dmg);
+                EntityDamageEvent.Invoke(this, this, dmg);
             }
             if (Health <= 0)
             {
@@ -39,15 +40,15 @@ namespace OpenWarfare.Entity
             return this;
         }
         public virtual Action tick { private set; get; } = () => { };
-        public virtual void onDeath()
+        protected virtual void onDeath()
         {
             List<object> args = [this];
-            EntityDeathEvent.Invoke(this);
+            EntityDeathEvent.Invoke(this, this);
             IsAlive = false;
         }
         public Entity()
-        { 
-            
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Numerics;
+using OpenWarfare.Entity;
 using OpenWarfare.Event;
 
 namespace OpenWarfare.Manager
@@ -38,7 +39,7 @@ namespace OpenWarfare.Manager
         public void Explosion(byte intensity, byte radius, Vector2 pos)
         {
             int realDMG = (int)(10 * intensity * (radius / 2.5)); // Yes, radius affects intensity.
-            
+
         }
         public void SpawnPlayer(Player p)
         {
@@ -53,6 +54,10 @@ namespace OpenWarfare.Manager
             players.Append(p
                 .SetTeam(team)
                 .SetPos(pos));
+        }
+        public void SpawnBullet(Entity.Entity e, Bullet b)
+        {
+            // new Bullet(e.Pos, [0,0], )
         }
     }
 }

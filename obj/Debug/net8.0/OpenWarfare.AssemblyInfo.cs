@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenWarfare")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27a4a786debe70564c6ecd49259b27ce259d8773")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29a3341eb8a735a0a8ddf2df265a1fbfc415aa00")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenWarfare")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenWarfare")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
